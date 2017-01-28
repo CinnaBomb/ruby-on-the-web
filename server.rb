@@ -7,9 +7,9 @@ def parse(full_request)
 	#remove trailing newlines and carriage returns. find better way
 	header[2] = header[2].split("\\")[0]
 	request_hash = {
-		:verb => request[0],
-		:path => request[1],
-		:version => request[2]
+		:verb => header[0],
+		:path => header[1],
+		:version => header[2]
 	}
 	if request_hash[:verb] == "POST"
 		#add extra info to request_hash
